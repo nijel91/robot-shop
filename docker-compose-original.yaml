@@ -3,7 +3,7 @@ services:
   mongodb:
     build:
       context: mongo
-    image: gcr.io/sys-2b0109it/demo/bitnami/mongodb-sharded:4.2.8
+    image: ${REPO}/rs-mongodb:${TAG}
     networks:
       - robot-shop
   redis:
@@ -42,7 +42,7 @@ services:
   mysql:
     build:
       context: mysql
-    image: gcr.io/sys-2b0109it/demo/bitnami/mysql:5.7.31
+    image: ${REPO}/rs-mysql-db:${TAG}
     cap_add:
       - NET_ADMIN
     networks:
